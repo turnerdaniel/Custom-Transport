@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	
+	<!-- Style info -->
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	
+	<!-- JavaScript -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	
+	<title>Customise Vehicles</title>
+
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+
+<nav> 
+	<ul class="navbar"> 
+		<li class="moveLeft"><img src="img/logo.png" class="logo" alt="Custom Transport Lincoln Logo"></li> 
+		<li>
+			<ul class="navbar moveRight"> 
+				<li class="moveLeft"><a href="index.html">Home</a></li> 
+				<li class="moveLeft"><a href="products.html">Products</a></li> 
+				<li class="moveLeft"><a class="active" href="customise.html">Customise Vehicles</a></li>
+				<li class="moveLeft"><a href="contact.html">Contact Us</a></li>
+				<li class="moveLeft"><a href="about.html">About Us</a></li>
+			</ul> 
+		</li>
+	</ul> 
+</nav> 
+<!--End of navigation bar -->
+
+<!-- Basket -->
+	<aside class="cart">
+		<h1 class="centre">Basket</h1>
+		<div>
+			<table id="cartcontent">
+				<thead>
+					<tr>
+						<th field="name"  class="basketname">Name</th>
+						<th field="quantity" class="basketqty">Quantity</th>
+						<th field="price" class="basketprice">Price</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<p class="total">Total: £0</p>
+		<p class="bottom">Drop here to add to basket.</p>
+	</aside>
+<!--End of basket -->
+
+<article>
+	<!-- Products -->
+	<section>
+		<div class="custombuywrapper">
+			<h1>Select your vehicle:</h1>
+			<p>Please select a vehicle in order to start the customisation process or drag the vehicle to the basket to purchase the vehicle with no customisation options:</p>
+		</div>
+		<div id="productswrapper">
+				<ul class="products">
+				<li>
+					<a href="#" class="item" id="lambo" data-id="1">
+						<img src="img/products/custom/lambo_centenario.jpg" alt="Lamborghini Centenario"/>
+						<div class="info">
+							<p class="title" data="799999">Lamborghini Centenario</p>
+							<p>Price: £799,999</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="item" id="s5" data-id="2">
+						<img src="img/products/custom/audi_s5.jpg" alt="Audi S5"/>
+						<div class="info">
+							<p class="title" data="546000">Audi S5</p>
+							<p>Price: £546,000</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="item" id="q5" data-id="3">
+						<img src="img/products/custom/audi_q5.jpg" alt="Audi Q5"/>
+						<div class="info">
+							<p class="title" data="600000">Audi Q5</p>
+							<p>Price: £600,000</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="item" id="bmw" data-id="4">
+						<img src="img/products/custom/bmw_g11.jpg" alt="BMW G11"/>
+						<div class="info">
+							<p class="title" data="745000">BMW G11</p>
+							<p>Price: £745,000</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+<!--End of products -->
+
+<!--Customise Section -->
+	<div class="dark">
+		<section>
+			<h1>Customise:</h1>
+			<p>Make the adjustments to your vehicle below.</p>
+			
+			<div id="canvaswrapper">
+				<img src="img/products/custom/audi_q5_topdown.jpg" id="customvehicleimg" alt="customised vehicle">
+				<canvas id="canvas" width="125" height="120"></canvas>
+			</div>
+			
+			<div id="controls">
+				<p>Vehicle Colour:</p>
+				<select id="dropdown">
+				  <option value="blue">Blue</option>
+				  <option value="green">Green</option>
+				  <option value="red">Red</option>
+				  <option value="yellow">Yellow</option>
+				</select>
+				
+				<p>Brush Colour:</p>
+				<input id="color" type="color" value="#000000">
+				
+				<p>Brush Width:</p>
+				<input id="range" type="range" value="5">
+			</div>
+		</section>
+	</div>	
+<!-- End of Customise Section -->
+
+<!-- Add to basket button -->
+	<section>
+		<h1>Add to Basket:</h1>
+		<div class="custombuywrapper">
+			<p>Once you are happy with your customisation, add the vehicle to your basket using the button below. You can customise any vehicle for a fixed price.</p>
+			<p>Cost: £1,000,000
+		</div>
+		<div class="buybtnwrapper">
+			<ul class="products">
+				<li>
+					<a href="#" class="item" data-id="20">
+						<img src="img/basketbtn.png" alt="add to basket button">
+						<div class="info hidden">
+							<p class="title" data="1000000">Custom Vehicle</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>		
+	</section>
+<!-- End of basket button section -->
+</article>
+
+<!-- JavaScript -->
+
+<script type="text/javascript" src="js/customise.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
